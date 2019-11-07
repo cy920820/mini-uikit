@@ -46,7 +46,9 @@ uikit.alert('测试', 'test')
 
 ### API
 
-1. `uikit.loading.show()`
+#### Loading
+
+`uikit.loading.show()`
 
 ```js
 import * as uikit from 'mini-uikit'
@@ -58,7 +60,9 @@ setTimeout(() => {
 }, 2000)
 ```
 
-2. `uikit.toast.showTop(content, time, cb)`
+#### Toast
+
+`uikit.toast.showCenter(options)`
 
 options:
 
@@ -81,7 +85,9 @@ uikit.toast.showBottom('test', () => {
 })
 ```
 
-3. `uikit.actionsheet(options)`
+#### ActionSheet
+
+`uikit.actionsheet(options)`
 
 options:
 
@@ -118,7 +124,11 @@ uikit.actionsheet({
 })
 ```
 
-4. `uikit.alert(title, content, btns)`
+#### Alert
+
+##### 基础用法
+
+`uikit.alert(title, content, btns)`
 
 options:
 
@@ -143,7 +153,11 @@ uikit.alert(
 )
 ```
 
-`alert 自定义选项`
+##### 自定义选项
+
+`uikit.alert.config(options)`
+
+options:
 
 - `z-index`：在页面有其他元素的使用了定位并且层级比较高时可以使用这个参数调整 alert 的层级
 - `btnText`: 默认按钮的文案是 “确定”，可以通过这个参数修改
