@@ -1,0 +1,40 @@
+{
+  "name": "Mini-uikit",
+  "version": "0.1.0",
+  "description": "基于原生 js 实现，不依赖任何框架，是一款轻量的高频 ui 组件库; 该组件库中目前只封装了 alert, toast, loading, actionSheet 等使用频率较高的组件，\b\b使用场景偏向一些简单的 H5 移动端项目，避免为了使用这些组件而引入一个大而全的 UI 库和框架。",
+  "main": "dist/lib.js",
+  "scripts": {
+    "test": "jest",
+    "release": "node webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cy920820/mini-uikit.git"
+  },
+  "keywords": [],
+  "author": "cy920820",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cy920820/mini-uikit/issues"
+  },
+  "homepage": "https://github.com/cy920820/mini-uikit#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/runtime-corejs2": "^7.7.7",
+    "add": "^2.0.6",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.0",
+    "eslint": "^6.8.0",
+    "jest": "^24.9.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sass-loader": "^8.0.0",
+    "terser-webpack-plugin": "^2.3.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.41.4",
+    "webpack-dev-server": "^3.10.1",
+    "yarn": "^1.21.1"
+  }
+}
