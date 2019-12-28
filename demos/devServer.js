@@ -26,7 +26,6 @@ const config = {
   mode: 'development',
   entry: {
     loading: [
-      `webpack-dev-server/client?${host}`,
       './loading/app.js'
     ]
   },
@@ -52,6 +51,15 @@ const config = {
     ]
   }
 }
+
+const entry = config.entry
+
+Object.keys(entry).forEach(key => {
+  let entryPort = entry[key]
+  entryPort.unshift(`webpack-dev-server/client?${host}`)
+})
+
+console.log(config.entry)
 
 const compiler = webpack(config)
 
