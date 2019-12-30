@@ -1,6 +1,6 @@
 # mini-uikit
 
-Mini-Uikit 是基于原生 js 实现，不依赖任何框架，是一款轻量的高频 ui 组件库; 该组件库中目前只封装了 alert, toast, loading, actionSheet 等使用频率较高的组件，使用场景偏向一些简单的 H5 移动端项目，避免为了使用这些组件而引入一个大而全的 UI 库和框架。
+Mini-Uikit 是基于原生 js 实现，不依赖任何框架，是一款轻量高频的 ui 组件库; 该 ui 库内部封装了一些使用频率较高的组件，使用场景偏向一些简单的 H5 移动端项目，主要目的是为了规避当使用这些组件时而引入一个大而全的 UI 库。
 
 ## Example
 
@@ -17,7 +17,7 @@ $ yarn add mini-uikit -S
 
 ### Usage
 
-可以通过模块化方式引入
+模块化方式引入
 
 ```js
 import * as uikit from 'mini-uikit'
@@ -30,7 +30,7 @@ uikit.alert('测试', 'test')
 
 ```
 
-或直接引入文件，比如使用 CDN
+使用 CDN 引入
 
 ```html
 <link href="https://unpkg.com/mini-uikit@0.0.1/dist/lib.css">
