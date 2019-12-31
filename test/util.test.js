@@ -1,5 +1,5 @@
 import util from '../helper/util'
-import conf from '../components/config'
+import { libName } from '../components/config'
 
 test('trim', () => {
   expect(util.trim('')).toBe('')
@@ -8,7 +8,7 @@ test('trim', () => {
 
 test('clsPrefixed', () => {
   let cls = 'mask'
-  expect(util.clsPrefixed(cls)).toBe(`${conf.libName}-${cls}`)
+  expect(util.clsPrefixed(cls)).toBe(`${libName}-${cls}`)
 })
 
 test('hasClass', () => {
@@ -28,7 +28,7 @@ test('addClass', () => {
   oDiv.className = ' main content foo   '
   const cls = 'foo'
   util.addClass(oDiv, cls)
-  expect(oDiv.className).toBe([ 'main', 'content', 'foo', `${conf.libName}-${cls}` ].join(' '))
+  expect(oDiv.className).toBe([ 'main', 'content', 'foo', `${libName}-${cls}` ].join(' '))
 })
 
 test('rmClass', () => {
@@ -38,4 +38,17 @@ test('rmClass', () => {
   util.addClass(oDiv, cls)
   util.rmClass(oDiv, cls)
   expect(oDiv.className).toBe([ 'main', 'content', 'foo' ].join(' '))
+})
+
+test('hideEle', () => {
+  let oDiv = document.createElement('div')
+  util.hideEle(oDiv)
+  expect(oDiv.className).toBe(`${libName}-hidden`)
+})
+
+test('showEle', () => {
+  let oDiv = document.createElement('div')
+  oDiv.classList.add(`${libName}-hidden`)
+  util.showEle(oDiv)
+  expect(oDiv.className).toBe('')
 })
