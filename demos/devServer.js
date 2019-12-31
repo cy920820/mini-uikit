@@ -25,8 +25,8 @@ const config = {
   context: __dirname,
   mode: 'development',
   entry: {
-    loading: [
-      './loading/app.js'
+    toast: [
+      './toast/app.js'
     ]
   },
 
