@@ -21,7 +21,7 @@ const config = {
   entry: './components/index.js',
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'lib'),
     filename: 'lib.js',
     library: pkg.name,
     libraryTarget: 'umd'
