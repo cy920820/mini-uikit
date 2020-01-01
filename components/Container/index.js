@@ -1,5 +1,5 @@
 import util from '../../helper/util'
-import '../common.scss'
+import './index.scss'
 
 class Container {
   constructor() {
