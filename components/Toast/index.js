@@ -5,7 +5,7 @@ class Toast {
   constructor() {
     this.$el = null
     this.$wrapper = null
-    this.inited = false
+    this.isInited = false
   }
 
   show(text, time, cb, position) {
@@ -49,7 +49,7 @@ class Toast {
   }
 
   init() {
-    if (this.inited) return
+    if (this.isInited) return
 
     const wrapper = document.createElement('div')
     const content = document.createElement('div')
@@ -60,7 +60,7 @@ class Toast {
     util.hideEle(wrapper)
     this.$wrapper = wrapper
     this.$el = content
-    this.inited = true
+    this.isInited = true
   }
 }
 

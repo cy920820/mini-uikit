@@ -31,6 +31,9 @@ const config = {
   entry: {
     toast: [
       './toast/app.js'
+    ],
+    loading: [
+      './loading/app.js'
     ]
   },
 

@@ -71,3 +71,15 @@ $zindexActionSheet: 1002;
 .#{$prefix}-bottom-out {
   transform: translateY(100%);
 }
+
+// circle spinner
+
+@keyframes #{$prefix}-spinner {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
