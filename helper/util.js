@@ -69,16 +69,16 @@ export default {
   },
 
   createInAnime(cls) {
-    return function (node) {
+    return (node) => {
       this.addClass(node, cls)
       setTimeout(() => {
-        node.rmClass(node, cls)
+        this.rmClass(node, cls)
       }, 0)
     }
   },
 
   createOutAnime(cls) {
-    return function (node, callback) {
+    return (node, callback) => {
       this.addClass(node, cls)
       setTimeout(() => {
         this.rmClass(node, cls)
@@ -92,7 +92,7 @@ export default {
   },
 
   fadeOut(node, cb) {
-    this.createInAnime('fade-out')(node, cb)
+    this.createOutAnime('fade-out')(node, cb)
   },
 
   bottomIn(node) {
@@ -100,7 +100,7 @@ export default {
   },
 
   bottomOut(node, cb) {
-    this.createInAnime('bottom-out')(node, cb)
+    this.createOutAnime('bottom-out')(node, cb)
   },
 
   scaleIn(node) {
@@ -108,6 +108,6 @@ export default {
   },
 
   scaleOut(node, cb) {
-    this.createInAnime('scale-out')(node, cb)
+    this.createOutAnime('scale-out')(node, cb)
   }
 }

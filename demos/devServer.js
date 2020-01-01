@@ -19,11 +19,15 @@ function getIPv4() {
 
 const ipv4 = getIPv4()
 
-const host = `http://${ipv4}:8080`
+const port = 8080
+
+const host = `http://${ipv4}:${port}`
 
 const config = {
   context: __dirname,
+
   mode: 'development',
+
   entry: {
     toast: [
       './toast/app.js'
@@ -32,6 +36,10 @@ const config = {
 
   output: {
     filename: 'js/[name].js'
+  },
+
+  resolve: {
+    extensions: ['.js']
   },
 
   module: {
@@ -71,6 +79,6 @@ const server = new Server(compiler, {
   contentBase: __dirname
 })
 
-server.listen(8080, '', () => {
+server.listen(port, '', () => {
   console.log(`server ===> ${host}`)
 })

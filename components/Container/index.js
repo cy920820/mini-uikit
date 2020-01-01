@@ -1,78 +1,69 @@
 import util from '../../helper/util'
 import './index.scss'
 
-class Container {
-  constructor() {
-    this.$container = ''
-    this.$mask = {
-      el: this.maskEl,
-      cbs: [],
-      onclick(fn) {
-        this.cbs.push(fn)
-      },
-      offclick(fn) {
-        this.cbs = this.cbs.filter((item) => item !== fn)
-      }
-    }
-    this.counts = 0
-    this.maskCounts = 0
-  }
+let containerShowCounts = 0
+let maskShowCounts = 0
 
-  show() {
-    this.counts += 1
-    util.showEle('hidden')
-  }
+let $container = null
+let $maskEl = null
 
-  showWithMask(){
-    this.maskCounts += 1
-    const maskEl = this.$mask.el
-    util.showEle(maskEl)
-    this.show()
-    util.fadeIn(maskEl)
-  }
+init()
 
-  hide() {
-    this.counts -= 1
-    if (this.counts === 0) {
-      util.hideNode(this.$container, 'hidden')
-    }
-  }
-
-  hideWithMask() {
-    this.maskCounts -= 1
-
-    if (this.maskCounts === 0) {
-      const maskEl = this.$mask.el
-      util.fadeOut(maskEl, () => {
-        util.hideEle(maskEl)
-        this.hide()
-      })
-    }
-
-    let maskEl = this.$mask.el
-    util.showEle(maskEl)
-    this.show()
-    util.fadeIn(maskEl)
-  }
-
-  append(node) {
-    this.$container.appendChild(node)
-  }
-
-  init() {
-    this.$container = document.createElement('div')
-    this.$maskEl = document.createElement('div')
-    util.addClass(this.$container, 'container')
-    util.addClass(this.$maskEl, 'mask')
-    this.append(this.$maskEl)
-
-    util.hideEle(this.$container)
-    util.hideEle(this.$maskEl)
-    document.body.appendChild(this.$container)
-
-    // faskclick
+export const $mask = {
+  el: $maskEl,
+  cbs: [],
+  onclick(fn) {
+    this.cbs.push(fn)
+  },
+  offclick(fn) {
+    this.cbs = this.cbs.filter((item) => item !== fn)
   }
 }
 
-const container = new Container()
-container.init()
+export function showContainer() {
+  containerShowCounts += 1
+  util.showEle($container)
+}
+
+export function showContainerWithMask(){
+  maskShowCounts += 1
+  util.showEle($maskEl)
+  showContainer()
+  util.fadeIn($maskEl)
+}
+
+export function hideContainer() {
+  containerShowCounts -= 1
+  if (containerShowCounts === 0) {
+    util.hideEle($container)
+  }
+}
+
+export function hideContainerWithMask() {
+  maskShowCounts -= 1
+
+  if (maskShowCounts === 0) {
+    util.fadeOut($maskEl, () => {
+      util.hideEle($maskEl)
+      hideContainer()
+    })
+  }
+}
+
+export function append(node) {
+  $container.appendChild(node)
+}
+
+function init() {
+  $container = document.createElement('div')
+  $maskEl = document.createElement('div')
+  util.addClass($container, 'container')
+  util.addClass($maskEl, 'mask')
+  append($maskEl)
+
+  util.hideEle($container)
+  util.hideEle($maskEl)
+  document.body.appendChild($container)
+
+  // faskclick
+}
