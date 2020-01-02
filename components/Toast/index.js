@@ -3,7 +3,7 @@ import * as container from '../../components/Container'
 import './index.scss'
 class Toast {
   constructor() {
-    this.$el = null
+    this.$toast = null
     this.$wrapper = null
     this.isInited = false
   }
@@ -14,12 +14,12 @@ class Toast {
       time = null
     }
 
-    this.$el.innerHTML = text
-    this.$el.style.top = position
+    this.$toast.innerHTML = text
+    this.$toast.style.top = position
 
     util.showEle(this.$wrapper)
     container.showContainer()
-    util.scaleIn(this.$el)
+    util.scaleIn(this.$toast)
 
     setTimeout(() => {
       this.hide(cb)
@@ -28,8 +28,8 @@ class Toast {
   }
 
   hide(cb) {
-    util.scaleOut(this.$el, () => {
-      this.$el.innerHTML = ''
+    util.scaleOut(this.$toast, () => {
+      this.$toast.innerHTML = ''
       util.hideEle(this.$wrapper)
       container.hideContainer()
       cb && cb()
@@ -59,7 +59,7 @@ class Toast {
     container.append(wrapper)
     util.hideEle(wrapper)
     this.$wrapper = wrapper
-    this.$el = content
+    this.$toast = content
     this.isInited = true
   }
 }

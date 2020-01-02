@@ -52,3 +52,8 @@ test('showEle', () => {
   util.showEle(oDiv)
   expect(oDiv.className).toBe('')
 })
+
+test('getType', () => {
+  const result = util.getType(() => {})
+  expect(result).toBe('Function')
+})

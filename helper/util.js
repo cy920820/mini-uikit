@@ -1,6 +1,10 @@
 import { libName, duration } from '../components/config'
 
 export default {
+  getType(obj) {
+    return Object.prototype.toString.call(obj).slice(8, -1)
+  },
+
   clsPrefixed(cls) {
     return `${libName}-${cls}`
   },
@@ -59,6 +63,47 @@ export default {
       node.className = this.trim(clsNames)
     }
   },
+
+  fastclick: (function () {
+    let startX = 0
+    let startY = 0
+    let cancel = false
+
+    function onTouchStart (e) {
+      e = e || window.event
+      let touches = e.touches
+      if (touches.length === 1) {
+        startX = touches[0].pageX
+        startY = touches[0].pageY
+      }
+    }
+
+    function onTouchMove (e) {
+      e = e || window.event
+      const distance = 10
+      let pageX = e.touches[0].pageX
+      let pageY = e.touches[0].pageY
+      if (Math.abs(pageX - startX) > distance || Math.abs(pageY - startY) > distance) cancel = true
+    }
+
+    return function (node, cb) {
+      node.addEventListener('touchstart', onTouchStart, false)
+      node.addEventListener('touchmove', onTouchMove, false)
+      node.addEventListener('touchend', (e) => {
+        e = e || window.event
+        if (cancel === false) {
+          cb(e)
+          e.preventDefault()
+        } else {
+          cancel = false
+          startX = startY = 0
+        }
+      }, false)
+      if (!navigator.userAgent.toLowerCase().match('mobile')) {
+        node.addEventListener('click', cb, false)
+      }
+    }
+  })(),
 
   showEle(el) {
     this.rmClass(el, 'hidden')

@@ -34,6 +34,9 @@ const config = {
     ],
     loading: [
       './loading/app.js'
+    ],
+    dialog: [
+      './dialog/app.js'
     ]
   },
 
