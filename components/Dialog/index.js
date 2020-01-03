@@ -13,9 +13,6 @@ class Dialog {
     this.btnText = '确定'
     this.$wrapper = null
     this.$dialog = null
-    this.$title = null
-    this.$content = null
-    this.$buttons = null
     this.handlers = []
     this.BUTTON_IDX = 'btn-idx'
   }
