@@ -1,0 +1,49 @@
+@import '../common.scss';
+
+.#{$prefix}-actionSheet {
+  position: absolute;
+  bottom: 0;
+  z-index: $zindexActionSheet;
+  width: 100%;
+  transition: transform $duration;
+}
+
+.#{$prefix}-actionSheet-title {
+  padding: 5px 12px;
+  line-height: 1.5;
+  font-size: $fontSize;
+  text-align: center;
+  color: #888;
+  background-color: #fff;
+}
+
+.#{$prefix}-actionSheet-options {
+  max-height: 333px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.#{$prefix}-actionSheet-option {
+  height: 44px;
+  line-height: 44px;
+  color: $primaryColor;
+  font-size: $fontSize + 2;
+  background-color: #fff;
+  text-align: center;
+
+  &:active {
+    background-color: #e4e4e3;
+  }
+}
+
+.#{$prefix}-actionSheet-disable {
+  color: $disableColor;
+}
+
+.#{$prefix}-actionSheet-destructive {
+  color: $warningColor;
+}
+
+.#{$prefix}-actionSheet-cancel {
+  margin-top: 4px;
+}

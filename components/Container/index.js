@@ -7,6 +7,7 @@ let maskShowCounts = 0
 let $container = null
 let $maskEl = null
 
+// 初始化容器组件
 init()
 
 export const $mask = {
@@ -19,6 +20,13 @@ export const $mask = {
     this.cbs = this.cbs.filter((item) => item !== fn)
   }
 }
+
+// faskclick
+util.fastclick($maskEl, (e) => {
+  $mask.cbs.forEach(cb => {
+    cb(e)
+  })
+})
 
 export function showContainer() {
   containerShowCounts += 1
@@ -64,6 +72,4 @@ function init() {
   util.hideEle($container)
   util.hideEle($maskEl)
   document.body.appendChild($container)
-
-  // faskclick
 }
