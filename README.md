@@ -8,23 +8,19 @@ Mini-Uikit 是基于原生 js 实现，不依赖任何框架，是一款轻量�
   <tbody>
     <tr>
       <td>
-        <img width="240" height="300" src="./screenshots/List.jpg">
-        <p align="center">List</p>
-      </td>
-      <td>
-        <img width="240" height="300" src="./screenshots/Toast.jpg">
+        <img height="300" src="./screenshots/Toast.jpg">
         <p align="center">Toast</p>
       </td>
       <td>
-        <img width="240" height="300" src="./screenshots/Loading.jpg">
+        <img height="300" src="./screenshots/Loading.jpg">
         <p align="center">Loading</p>
       </td>
       <td>
-        <img width="240" height="300" src="./screenshots/Dialog.jpg">
+        <img height="300" src="./screenshots/Dialog.jpg">
         <p align="center">Dialog</p>
       </td>
       <td>
-        <img width="240" height="300" src="./screenshots/ActionSheet.jpg">
+        <img height="300" src="./screenshots/ActionSheet.jpg">
         <p align="center">ActionSheet</p>
       </td>
     </tr>
