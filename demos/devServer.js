@@ -37,6 +37,9 @@ const config = {
     ],
     dialog: [
       './dialog/app.js'
+    ],
+    actionSheet: [
+      './actionSheet/app.js'
     ]
   },
 
