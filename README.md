@@ -21,11 +21,14 @@ $ yarn add mini-uikit -S
 
 ```js
 import * as uikit from 'mini-uikit'
-import 'mini-uikit/dist/lib.css'
+import 'mini-uikit/lib/lib.css'
 
 uikit.loading.show()
+setTimeout(() => {
+  uikit.loading.hide()
+}, 1500)
 uikit.toast.showTop('测试')
-uikit.actionsheet({/* options */})
+uikit.actionsheet(...options) // options: title, options, onCancel, hideCancel, cancelBtnText
 uikit.alert('测试', 'test')
 
 ```
@@ -38,9 +41,12 @@ uikit.alert('测试', 'test')
 
 <script>
   uikit.loading.show()
+  setTimeout(() => {
+    uikit.loading.hide()
+  }, 1500)
   uikit.toast.showTop('测试')
   uikit.actionsheet({/* options */})
-  uikit.alert('测试', 'test')
+  uikit.dialog.alert('测试', 'test')
 </script>
 ```
 
@@ -62,13 +68,13 @@ setTimeout(() => {
 
 #### Toast
 
-`uikit.toast.showCenter(options)`
+`uikit.toast.showTop(options)`
 
 options:
 
 - content: `string` 必选
-- time: number 显示多少毫秒，默认 1500，可选
-- cb: 消失后的回调，可选
+- time: `number` 显示毫秒数，默认 1800，可选
+- cb: `function` toast 结束后的回调，可选
 
 ```js
 import * as uikit from 'mini-uikit'
@@ -80,8 +86,8 @@ uikit.toast.showTop('test')
 uikit.toast.showCenter('test', 5000)
 
 // demo 3.
-uikit.toast.showBottom('test', () => {
-// do something you want
+uikit.toast.showBottom('test', 2000, () => {
+// callback
 })
 ```
 
@@ -92,81 +98,94 @@ uikit.toast.showBottom('test', () => {
 options:
 
 - title: `string`， 可选
-- options: array 可以操作的选项，必选（option-item 结构：{ text: String, disable: Boolean, onClick: Function }）
+- options: `array`， 必选， 选项数组， 每一项包含 text、disable、destructive、onSelect
+- onCancel: `function`，可选，指定取消按钮回调函数
+- hideCancel: `boolean`，可选，是否隐藏取消按钮
+- cancelBtnText: `string`，可选，默认值是 “取消”
 
 ```js
 import * as uikit from 'mini-uikit'
 
-uikit.actionsheet({
-  options: [
+uikit.actionsheet('标题', [
     {
-      text: 'test1',
+      text: '选项 1',
       disable: false,
-      onClick: (i, text) => {}
+      onSelect: (i, text) => {}
     },
     {
-      text: 'test2',
+      text: '选项 2',
       disable: true
     },
     {
-      text: 'test3',
-      onClick: (i, text) => {
+      text: '选项 3',
+      destructive: true,
+      onSelect: (i, text) => {
       }
     }
   ],
-  title: '测试',
-  onClick(i, text) {
-    // 没有指定 click 选项的 item 点击回调
-  },
   onCancel() {
-    // 取消回调
-  }
+    // 取消回调函数
+  },
+  false,
+  '关闭'
 })
 ```
 
-#### Alert
+#### Dialog
 
-##### 基础用法
+##### Api 示例
 
-`uikit.alert(title, content, btns)`
+```js
+// alert 用法
+uikit.dialog.alert(title, content, btns)
+
+// confirm 用法
+uikit.dialog.confirm(title, content, btns)
+
+// 手动隐藏对话框
+uikit.dialog.hide()
+
+```
 
 options:
 
 - title: `string`， 可选
 - content: string，必选
-- btns: `array | function`，可选（button 结构：{ text: String, onClick: Function }）
+- btns: `array | function`，可选（btns 结构：{ text: String, onClick: Function }）
 
 ```js
 import * as uikit from 'mini-uikit'
 
 // demo 1.
-uikit.alert('test1', ' 这只是一个测试')
+uikit.dialog.alert('标题 1', '内容 1')
 
 // demo 2.
-uikit.alert(
-  'test2',
-  '这是另外一个测试',
-  [
-    { text: '取消', onClick: () => {} },
-    { text: '确定', onClick: () => {} }
-  ]
+uikit.dialog.confirm(
+  '标题 2',
+  '内容 2',
+  (result) => {
+    if (result) {
+      // 确定回调逻辑
+    } esle {
+      // 取消回调逻辑
+    }
+  }
 )
-```
 
-##### 自定义选项
-
-`uikit.alert.config(options)`
-
-options:
-
-- `z-index`：在页面有其他元素的使用了定位并且层级比较高时可以使用这个参数调整 alert 的层级
-- `btnText`: 默认按钮的文案是 “确定”，可以通过这个参数修改
-
-```js
-
-uikit.alert.config({
-  zIndex: 9999, // alert 的 z-index
-  btnText: 'ok' // 默认按钮的文案
-})
+// demo 3.
+uikit.dialog.alert('标题 3', '自定义按钮', [
+  {
+    text: '否',
+    onClick: () {
+      console.log('no')
+    }
+  },
+  {
+    text: '是',
+    onClick: () {
+      console.log('yes')
+    }
+  }
+])
 
 ```
