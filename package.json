@@ -5,7 +5,8 @@
   "main": "dist/lib.js",
   "scripts": {
     "test": "jest",
-    "release": "node webpack.config.js"
+    "release": "node webpack.config.js",
+    "start": "node demos/devServer.js"
   },
   "repository": {
     "type": "git",
