@@ -4,6 +4,33 @@ Mini-Uikit 是基于原生 js 实现，不依赖任何框架，是一款轻量�
 
 ## Example
 
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <img width="240" height="300" src="https://tva1.sinaimg.cn/large/006tNbRwly1gajhisok4kj30hw0vkjs2.jpg">
+        <p align="center">List</p>
+      </td>
+      <td>
+        <img width="240" height="300" src="https://tva1.sinaimg.cn/large/006tNbRwly1gajiclpq9cj30hu0ve0t7.jpg">
+        <p align="center">Toast</p>
+      </td>
+      <td>
+        <img width="240" height="300" src="https://tva1.sinaimg.cn/large/006tNbRwly1gajicyilg4j30ho0vgdgc.jpg">
+        <p align="center">Loading</p>
+      </td>
+      <td>
+        <img width="240" height="300" src="https://tva1.sinaimg.cn/large/006tNbRwly1gajid9s8h0j30hq0vgwff.jpg">
+        <p align="center">Dialog</p>
+      </td>
+      <td>
+        <img width="240" height="300" src="https://tva1.sinaimg.cn/large/006tNbRwly1gajiegs9anj30hq0vm74z.jpg">
+        <p align="center">ActionSheet</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ## Getting Started
 
 ### Installation
@@ -188,4 +215,13 @@ uikit.dialog.alert('标题 3', '自定义按钮', [
   }
 ])
 
+```
+
+## Quick Start
+
+```bash
+git clone https://github.com/cy920820/mini-uikit
+cd mini-uikit
+npm install // or yarn
+npm run start // or yarn start
 ```
