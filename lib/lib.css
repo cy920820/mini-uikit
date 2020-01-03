@@ -1,13 +1,13 @@
 /*!
  * 
- * Mini-uikit
- * 基于原生 js 实现，不依赖任何框架，是一款轻量的高频 ui 组件库; 该组件库中目前只封装了 alert, toast, loading, actionSheet 等使用频率较高的组件，使用场景偏向一些简单的 H5 移动端项目，避免为了使用这些组件而引入一个大而全的 UI 库和框架。
+ * mini-uikit
+ * Mini-Uikit 是基于原生 js 实现，不依赖任何框架，是一款轻量高频的 ui 组件库; 该 ui 库内部封装了一些使用频率较高的组件，使用场景偏向一些简单的 H5 移动端项目，主要目的是为了规避当使用这些组件时而引入一个大而全的 UI 库。
  * 
  * @version v0.1.0
  * @homepage https://github.com/cy920820/mini-uikit#readme
  * @repository git+https://github.com/cy920820/mini-uikit.git
  * 
- * (c)2017-2019 cy920820
+ * (c)2017-2020 cy920820
  * Released under the MIT License.
  * 
- */.nav{color:#fff}
+ */.uikit-container{position:fixed}.uikit-container,.uikit-mask{top:0;bottom:0;left:0;right:0;width:100%;height:100%}.uikit-mask{position:absolute;transition:opacity .3s;background-color:rgba(0,0,0,.3)}.uikit-loading-circle{position:absolute;top:50%;left:50%;width:36px;height:36px;padding:10px;background-color:rgba(0,0,0,.777);transform:translate(-50%,-50%);border-radius:6px;z-index:1001}.uikit-loading-spinner{width:100%;height:100%;box-sizing:border-box;border-radius:50%;border:3px solid hsla(0,0%,100%,.93);border-left-color:transparent;transform:translate(-50%,-50%);animation:uikit-spinner .9s linear infinite}.uikit-toast{position:absolute;top:50%;left:50%;max-width:70%;min-width:96px;white-space:pre-wrap;word-wrap:break-word;transform:translate(-50%,-50%);z-index:1000}.uikit-toast-content{text-align:center;background-color:rgba(0,0,0,.88);padding:8px 12px;color:#fff;font-size:14px;line-height:1.5;border-radius:6px;transition:opacity .3s,transform .3s}.uikit-dialog{position:relative;top:50%;transform:translateY(-50%)}.uikit-dialog-main{padding-top:10px;width:77%;margin:0 auto;background-color:#fff;border-radius:5px;transition:opacity .3s,transform .3s}.uikit-dialog-title{font-weight:500;color:#000}.uikit-dialog-content,.uikit-dialog-title{padding:0 12px 15px;line-height:1.4;font-size:14px;text-align:center}.uikit-dialog-content{color:#646566}.uikit-dialog-btn{height:36px;line-height:36px;font-size:16px;text-align:center;user-select:none;color:#07c160;background-color:transparent}.uikit-dialog-btn:active{background-color:#e3e3e3}.uikit-dialog-btns-double{position:relative}.uikit-dialog-btns-double .uikit-dialog-btn{display:inline-block;width:50%}.uikit-dialog-btns-double:after{content:"";position:absolute;left:50%;width:1px;height:100%;border-left:1px solid #ccb;transform:translateX(-50%) scaleX(.5)}.uikit-disabled{opacity:.5}.uikit-hidden{display:none}.uikit-bd-1px{position:relative}.uikit-bd-1px:before{content:"";position:absolute;top:0;left:0;right:0;width:100%;height:1px;border-top:1px solid #ccc;transform-origin:0 0;transform:scaleY(.5)}.uikit-fade-in,.uikit-fade-out{opacity:0}.uikit-scale-in,.uikit-scale-out{opacity:0;transform:scale(1.11)}.uikit-bottom-in,.uikit-bottom-out{transform:translateY(100%)}@keyframes uikit-spinner{0%{transform:rotate(0)}to{transform:rotate(1turn)}}.uikit-actionSheet{position:absolute;bottom:0;z-index:1002;width:100%;transition:transform .3s}.uikit-actionSheet-title{padding:5px 12px;line-height:1.5;font-size:12px;text-align:center;color:#888;background-color:#fff}.uikit-actionSheet-options{max-height:333px;overflow:scroll;-webkit-overflow-scrolling:touch}.uikit-actionSheet-option{height:44px;line-height:44px;color:#07c160;font-size:14px;background-color:#fff;text-align:center}.uikit-actionSheet-option:active{background-color:#e4e4e3}.uikit-actionSheet-disable{color:#999}.uikit-actionSheet-destructive{color:#ee0a24}.uikit-actionSheet-cancel{margin-top:4px}

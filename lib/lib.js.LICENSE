@@ -1,13 +1,13 @@
 /*!
  * 
- * Mini-uikit
- * 基于原生 js 实现，不依赖任何框架，是一款轻量的高频 ui 组件库; 该组件库中目前只封装了 alert, toast, loading, actionSheet 等使用频率较高的组件，使用场景偏向一些简单的 H5 移动端项目，避免为了使用这些组件而引入一个大而全的 UI 库和框架。
+ * mini-uikit
+ * Mini-Uikit 是基于原生 js 实现，不依赖任何框架，是一款轻量高频的 ui 组件库; 该 ui 库内部封装了一些使用频率较高的组件，使用场景偏向一些简单的 H5 移动端项目，主要目的是为了规避当使用这些组件时而引入一个大而全的 UI 库。
  * 
  * @version v0.1.0
  * @homepage https://github.com/cy920820/mini-uikit#readme
  * @repository git+https://github.com/cy920820/mini-uikit.git
  * 
- * (c)2017-2019 cy920820
+ * (c)2017-2020 cy920820
  * Released under the MIT License.
  * 
  */
