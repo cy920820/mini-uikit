@@ -146,7 +146,7 @@ uikit.actionsheet('标题', [
       }
     }
   ],
-  onCancel() {
+  () => {
     // 取消回调函数
   },
   false,
