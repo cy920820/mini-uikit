@@ -49,18 +49,18 @@ import 'mini-uikit/lib/lib.css'
 uikit.loading.show()
 setTimeout(() => {
   uikit.loading.hide()
-}, 1500)
+}, 3500)
 uikit.toast.showTop('测试')
 uikit.actionsheet(...options) // options: title, options, onCancel, hideCancel, cancelBtnText
-uikit.alert('测试', 'test')
+uikit.alert('测试', 'test')
 
 ```
 
 使用 CDN 引入
 
 ```html
-<link href="https://unpkg.com/mini-uikit@0.1.1/lib.css">
-<script src="https://unpkg.com/mini-uikit@0.1.1/lib.js"></script>
+<link href="https://unpkg.com/mini-uikit@0.1.1/lib/lib.css">
+<script src="https://unpkg.com/mini-uikit@0.1.1/lib/lib.js"></script>
 
 <script>
   uikit.loading.show()
