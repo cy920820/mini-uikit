@@ -59,14 +59,14 @@ uikit.alert('测试', 'test')
 使用 CDN 引入
 
 ```html
-<link href="https://unpkg.com/mini-uikit@0.0.1/dist/lib.css">
-<script src="https://unpkg.com/mini-uikit@0.0.1/dist/index.js"></script>
+<link href="https://unpkg.com/mini-uikit@0.1.1/lib.css">
+<script src="https://unpkg.com/mini-uikit@0.1.1/lib.js"></script>
 
 <script>
   uikit.loading.show()
   setTimeout(() => {
     uikit.loading.hide()
-  }, 1500)
+  }, 3500)
   uikit.toast.showTop('测试')
   uikit.actionsheet({/* options */})
   uikit.dialog.alert('测试', 'test')
@@ -148,10 +148,7 @@ uikit.actionsheet('标题', [
   ],
   () => {
     // 取消回调函数
-  },
-  false,
-  '关闭'
-})
+  })
 ```
 
 #### Dialog

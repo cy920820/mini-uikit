@@ -23,7 +23,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'lib'),
     filename: 'lib.js',
-    library: pkg.name,
+    library: pkg.name.split('-')[1],
     libraryTarget: 'umd'
   },
 
